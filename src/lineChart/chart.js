@@ -72,23 +72,21 @@ async function drawLineChart() {
     .append("path")
     .attr("d", lineGenerator(dataset))
     .attr("fill", "none")
-    .attr('stroke', '#00b295')
-    .attr('stroke-width', '2')
-  
-  const yAxisGenerator = d3.axisLeft().scale(yScale)
+    .attr("stroke", "#00b295")
+    .attr("stroke-width", "2");
+
+  const yAxisGenerator = d3.axisLeft().scale(yScale);
 
   // const yAxis = bounds.append('g')
   // yAxisGenerator(yAxis)
-  const yAxis = bounds.append('g').call(yAxisGenerator)
+  const yAxis = bounds.append("g").call(yAxisGenerator);
 
-  const xAxisGenerator = d3.axisBottom().scale(xScale)
+  const xAxisGenerator = d3.axisBottom().scale(xScale);
 
-  const xAxis = bounds.append('g').call(xAxisGenerator)
+  const xAxis = bounds.append("g").call(xAxisGenerator);
 
   // 我们需要移动x轴到底部，由于坐标轴生成器并不知道坐标轴需要放到哪个位置，它只知道刻度线和坐标的相对周标轴位置
-  xAxis.style('transform', `translate(0px, ${dimensions.boundleHeight}px)`)
-
-
+  xAxis.style("transform", `translate(0px, ${dimensions.boundleHeight}px)`);
 }
 
 drawLineChart();

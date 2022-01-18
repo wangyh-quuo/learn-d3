@@ -1,6 +1,6 @@
 import * as d3 from "d3";
 
-async function drawLineChart() {
+async function drawScatterplotChart() {
   // 1. access data
   const dataset = await d3.json("/json/my-weather.json");
   console.table(dataset[0]);
@@ -110,4 +110,4 @@ async function drawLineChart() {
   // 7. set up interactions
 }
 
-drawLineChart();
+drawScatterplotChart();

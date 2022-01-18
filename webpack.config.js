@@ -6,6 +6,7 @@ module.exports = {
   entry: {
     'lineChart': './src/lineChart/chart.js',
     'scatterplot': './src/scatterplot/chart.js',
+    'barChart': './src/barChart/chart.js',
   },
   devtool: 'source-map',
   plugins: [
@@ -20,6 +21,12 @@ module.exports = {
       filename: 'scatterplot.html',
       title: 'scatterplot',
       chunks: ['scatterplot']
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve('index.html'),
+      filename: 'barChart.html',
+      title: 'barChart',
+      chunks: ['barChart']
     }),
   ]
 }

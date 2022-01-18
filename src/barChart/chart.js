@@ -114,6 +114,13 @@ async function drawHistogram(metric) {
     .style("font-size", "1.4em")
     .text(metric)
     .style("text-transform", "capitalize");
+
+  // 设置SVG为图形区域
+  // wrapper.attr("role", "figure").attr("tabindex", "0");
+  // wrapper
+  //   .append("title")
+  //   .text("Histogram looking at the distribution of humidity in 2016");
+  // wrapper.attr("role", "list").attr("aria-label", "histogram bars");
 }
 
 const metrics = [

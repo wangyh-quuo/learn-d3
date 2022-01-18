@@ -1,9 +1,9 @@
 import * as d3 from "d3";
 
-async function drawBarChart() {
+async function drawHistogram(metric) {
   // 1. 获取数据
   const dataset = await d3.json("/json/my-weather.json");
-  const metricAccessor = (d) => d.humidity;
+  const metricAccessor = (d) => d[metric];
 
   // 2. 创建度量
   const width = 600;
@@ -112,7 +112,19 @@ async function drawBarChart() {
     .attr("y", dimensions.margin.bottom - 10)
     .attr("fill", "black")
     .style("font-size", "1.4em")
-    .text("Humidity");
+    .text(metric)
+    .style("text-transform", "capitalize");
 }
 
-drawBarChart();
+const metrics = [
+  "windSpeed",
+  "moonPhase",
+  "dewPoint",
+  "humidity",
+  "uvIndex",
+  "windBearing",
+  "temperatureMin",
+  "temperatureMax",
+];
+metrics.forEach(drawHistogram);
+// drawBarChart();
